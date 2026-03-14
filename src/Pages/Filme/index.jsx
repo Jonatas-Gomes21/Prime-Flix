@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useState,useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import api from "../../service/api";
 import Loading from "../../components/Loading";
 
 function Filme(){
     const { id } = useParams()
+
+    const navegation = useNavigate()
 
     const [filme, setFilme] = useState({})
 
@@ -25,11 +27,12 @@ function Filme(){
                 setLoading(false)
             })
             .catch(() => {
-                
+                navegation("/",{ replace: true})
+                return
             })
         }
         loadMovies()
-    }, [])
+    }, [navegation, id])
 
     if(loading){
         <Loading/>
@@ -54,7 +57,7 @@ function Filme(){
             <div className="mt-3 ml-0 text-xl ">
                 <button className="mr-3 mb-3 border-0 p-3 bg-[#116FEB] rounded-sm cursor-pointer  hover:bg-[#085bc7] ease-in-out duration-300">Salvar</button>
                 <button className="border-0 p-3 bg-[#116FEB] rounded-sm cursor-pointer hover:bg-[#085bc7] ease-in-out duration-300">
-                    <a href={filme.homepage}>Trailer</a>
+                   <a href={`https://www.youtube.com/results?search_query=${filme.title} Trailer`} target="_blank" rel="noopener noreferrer">Trailer</a>
                 </button>
             </div>
                 
