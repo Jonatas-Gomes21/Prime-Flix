@@ -4,7 +4,12 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "allowJs": true
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "bundler",
+    "target": "ESNext",
+    "module": "ESNext",
+    "skipLibCheck": true
   },
   "include": ["src"]
 }
