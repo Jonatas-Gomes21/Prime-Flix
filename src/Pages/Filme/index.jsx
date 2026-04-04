@@ -1,69 +1,51 @@
 import axios from "axios";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../../service/api";
 import Loading from "../../components/Loading";
+import Filmdescripition from "../../components/Filmdescripition";
 
-function Filme(){
-    const { id } = useParams()
+function Filme() {
+  const { id } = useParams();
 
-    const navegation = useNavigate()
+  const navegation = useNavigate();
 
-    const [filme, setFilme] = useState({})
+  const [filme, setFilme] = useState({});
 
-    const [loading,setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-
-        async function loadMovies() {
-            await api.get(`/movie/${id}`, {
-                params:{
-                    api_key:"dcb76df33091fa15f19b2ad0086ae043",
-                    language: "pt-BR",
-                }
-            })
-            .then((response) => {
-                setFilme(response.data)
-                setLoading(false)
-            })
-            .catch(() => {
-                navegation("/",{ replace: true})
-                return
-            })
-        }
-        loadMovies()
-    }, [navegation, id])
-
-    if(loading){
-        <Loading/>
+  useEffect(() => {
+    async function loadMovies() {
+      await api
+        .get(`/movie/${id}`, {
+          params: {
+            api_key: import.meta.env.VITE_API_KEY,
+            language: "pt-BR",
+          },
+        })
+        .then((response) => {
+          setFilme(response.data);
+          setLoading(false);
+        })
+        .catch(() => {
+          navegation("/", { replace: true });
+          return;
+        });
     }
+    loadMovies();
+  }, [navegation, id]);
 
-    return(
-        <div className="flex flex-col max-w-200 px-2 my-0 mx-auto items-center">
-            <h1 className="my-3.5 font-bold text-3xl">
-                {filme.title}
-            </h1>
+  if (loading) {
+    <Loading />;
+  }
 
-            <img className="rounded-lg w-225 max-w-full max-h-85 object-cover" 
-            src={`https://image.tmdb.org/t/p/original/${filme.backdrop_path}`} alt="" />
-            <h3 className="font-bold text-xl mt-2 text-center">
-                Sinopse
-            </h3>
-            <span className="my-2 font-medium text-center">
-                {filme.overview}
-            </span>
-            <strong>Avaliação: {filme.vote_average?.toFixed(1)} / 10</strong>
-            
-            <div className="mt-3 ml-0 text-xl ">
-                <button className="mr-3 mb-3 border-0 p-3 bg-[#116FEB] rounded-sm cursor-pointer  hover:bg-[#085bc7] ease-in-out duration-300">Salvar</button>
-                <button className="border-0 p-3 bg-[#116FEB] rounded-sm cursor-pointer hover:bg-[#085bc7] ease-in-out duration-300">
-                   <a href={`https://www.youtube.com/results?search_query=${filme.title} Trailer`} target="_blank" rel="noopener noreferrer">Trailer</a>
-                </button>
-            </div>
-                
-        </div>
-    )
-    
+  return (
+    <>
+      <div className="w-full h-153.75 flex justify-center items-center">
+        <Filmdescripition />
+      </div>
+    </>
+  );
 }
 
 export default Filme;

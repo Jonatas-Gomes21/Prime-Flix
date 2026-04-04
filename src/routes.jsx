@@ -1,28 +1,27 @@
-import { BrowserRouter,Routes,Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from './Pages/Home'
-import Filmes from './Pages/Filme'
-import Header from './components/Header'
-import Favoritos from './Pages/Favoritos'
+import Home from "./Pages/Home";
+import Filmes from "./Pages/Filme";
+import Header from "./components/Header";
+import Favoritos from "./Pages/Favoritos";
+import Filmgenre from "./Pages/Filmgenre";
 
-import Error from './Pages/Error'
+import Error from "./Pages/Error";
 
-function RouteApp(){
-    return(
-        <BrowserRouter>
-            <Header/>
-            <Routes>
-                <Route path="/" element={ <Home/> } />
-                <Route path="/favoritos" element={<Favoritos/>} />
-                <Route path="/filme/:id" element={<Filmes/>} />
+function RouteApp() {
+  return (
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/favoritos" element={<Favoritos />} />
+        <Route path="/filme/:id" element={<Filmes />} />
+        <Route path="/filmgenre/:id/:name" element={<Filmgenre />} />
 
-                
-                
-                
-                <Route path='*' element={<Error/>} />
-            </Routes>
-        </BrowserRouter>
-    )
+        <Route path="*" element={<Error />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default RouteApp
+export default RouteApp;

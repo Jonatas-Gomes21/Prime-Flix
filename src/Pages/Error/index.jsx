@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import {Link} from 'react-router-dom'
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-function Error(){
+function Error() {
   return (
     <StyledWrapper>
       <div className="main_wrapper">
@@ -16,9 +16,18 @@ function Error(){
           </div>
           <div className="tv">
             <div className="cruve">
-              <svg className="curve_svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 189.929 189.929" xmlSpace="preserve">
-                <path d="M70.343,70.343c-30.554,30.553-44.806,72.7-39.102,115.635l-29.738,3.951C-5.442,137.659,11.917,86.34,49.129,49.13
-        C86.34,11.918,137.664-5.445,189.928,1.502l-3.95,29.738C143.041,25.54,100.895,39.789,70.343,70.343z" />
+              <svg
+                className="curve_svg"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 189.929 189.929"
+                xmlSpace="preserve"
+              >
+                <path
+                  d="M70.343,70.343c-30.554,30.553-44.806,72.7-39.102,115.635l-29.738,3.951C-5.442,137.659,11.917,86.34,49.129,49.13
+        C86.34,11.918,137.664-5.445,189.928,1.502l-3.95,29.738C143.041,25.54,100.895,39.789,70.343,70.343z"
+                />
               </svg>
             </div>
             <div className="display_div">
@@ -36,7 +45,9 @@ function Error(){
               <div className="line3" />
             </div>
             <div className="buttons_div">
-              <div className="b1"><div /></div>
+              <div className="b1">
+                <div />
+              </div>
               <div className="b2" />
               <div className="speakers">
                 <div className="g1">
@@ -56,12 +67,17 @@ function Error(){
           </div>
         </div>
         <div className="font-bold text-3xl p-5 flex flex-col justify-center items-center max-md:text-[20px] w-auto ">
-            <h1 className="flex justify-center items-center gap-2">PAGINA NÃO ENCONTRADA!
+          <h1 className="flex justify-center items-center gap-2 text-white">
+            PAGINA NÃO ENCONTRADA!
             {/* <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f61e/512.gif" alt="😞" width="32" height="32"/> */}
-            </h1>
-            
+          </h1>
 
-            <Link className="text-[17px] mt-2 bg-[#116FEB] py-2 px-2.5 rounded-2xl font-medium hover:bg-[#085bc7] ease-in-out duration-300" to={'/'}>Veja todos os filmes!</Link>
+          <Link
+            className="text-[17px] mt-2 bg-[#116FEB] py-2 px-2.5 rounded-2xl  text-white font-medium hover:bg-[#085bc7] ease-in-out duration-300"
+            to={"/"}
+          >
+            Veja todos os filmes!
+          </Link>
         </div>
       </div>
     </StyledWrapper>
@@ -69,7 +85,6 @@ function Error(){
 }
 
 const StyledWrapper = styled.div`
-
   .main_wrapper {
     display: flex;
     align-items: center;
@@ -231,10 +246,10 @@ const StyledWrapper = styled.div`
     height: 9em;
     border-radius: 15px;
     background:
-      repeating-radial-gradient(#d36604 0 0.0001%, #00000070 0 0.0002%) 50% 0/2500px
-        2500px,
-      repeating-conic-gradient(#d36604 0 0.0001%, #00000070 0 0.0002%) 60% 60%/2500px
-        2500px;
+      repeating-radial-gradient(#d36604 0 0.0001%, #00000070 0 0.0002%) 50%
+        0/2500px 2500px,
+      repeating-conic-gradient(#d36604 0 0.0001%, #00000070 0 0.0002%) 60%
+        60%/2500px 2500px;
     background-blend-mode: difference;
     opacity: 0.09;
   }
@@ -268,13 +283,27 @@ const StyledWrapper = styled.div`
     border-radius: 10px;
   }
 
-
-
   .screen {
     width: 13em;
     height: 7.85em;
     position: relative;
-    background: linear-gradient(to right, #002fc6 0%, #002bb2 14.2857142857%, #3a3a3a 14.2857142857%, #303030 28.5714285714%, #ff0afe 28.5714285714%, #f500f4 42.8571428571%, #6c6c6c 42.8571428571%, #626262 57.1428571429%, #0affd9 57.1428571429%, #00f5ce 71.4285714286%, #3a3a3a 71.4285714286%, #303030 85.7142857143%, white 85.7142857143%, #fafafa 100%);
+    background: linear-gradient(
+      to right,
+      #002fc6 0%,
+      #002bb2 14.2857142857%,
+      #3a3a3a 14.2857142857%,
+      #303030 28.5714285714%,
+      #ff0afe 28.5714285714%,
+      #f500f4 42.8571428571%,
+      #6c6c6c 42.8571428571%,
+      #626262 57.1428571429%,
+      #0affd9 57.1428571429%,
+      #00f5ce 71.4285714286%,
+      #3a3a3a 71.4285714286%,
+      #303030 85.7142857143%,
+      white 85.7142857143%,
+      #fafafa 100%
+    );
     border-radius: 10px;
     border: 2px solid black;
     z-index: 99;
@@ -287,7 +316,8 @@ const StyledWrapper = styled.div`
     text-align: center;
     overflow: hidden;
   }
-  .screen:before, .screen:after {
+  .screen:before,
+  .screen:after {
     content: "";
     position: absolute;
     left: 0;
@@ -297,12 +327,42 @@ const StyledWrapper = styled.div`
   .screen:before {
     top: 0;
     height: 68.4782608696%;
-    background: linear-gradient(to right, white 0%, #fafafa 14.2857142857%, #ffe60a 14.2857142857%, #f5dc00 28.5714285714%, #0affd9 28.5714285714%, #00f5ce 42.8571428571%, #10ea00 42.8571428571%, #0ed600 57.1428571429%, #ff0afe 57.1428571429%, #f500f4 71.4285714286%, #ed0014 71.4285714286%, #d90012 85.7142857143%, #002fc6 85.7142857143%, #002bb2 100%);
+    background: linear-gradient(
+      to right,
+      white 0%,
+      #fafafa 14.2857142857%,
+      #ffe60a 14.2857142857%,
+      #f5dc00 28.5714285714%,
+      #0affd9 28.5714285714%,
+      #00f5ce 42.8571428571%,
+      #10ea00 42.8571428571%,
+      #0ed600 57.1428571429%,
+      #ff0afe 57.1428571429%,
+      #f500f4 71.4285714286%,
+      #ed0014 71.4285714286%,
+      #d90012 85.7142857143%,
+      #002fc6 85.7142857143%,
+      #002bb2 100%
+    );
   }
   .screen:after {
     bottom: 0;
     height: 21.7391304348%;
-    background: linear-gradient(to right, #006c6b 0%, #005857 16.6666666667%, white 16.6666666667%, #fafafa 33.3333333333%, #001b75 33.3333333333%, #001761 50%, #6c6c6c 50%, #626262 66.6666666667%, #929292 66.6666666667%, #888888 83.3333333333%, #3a3a3a 83.3333333333%, #303030 100%);
+    background: linear-gradient(
+      to right,
+      #006c6b 0%,
+      #005857 16.6666666667%,
+      white 16.6666666667%,
+      #fafafa 33.3333333333%,
+      #001b75 33.3333333333%,
+      #001761 50%,
+      #6c6c6c 50%,
+      #626262 66.6666666667%,
+      #929292 66.6666666667%,
+      #888888 83.3333333333%,
+      #3a3a3a 83.3333333333%,
+      #303030 100%
+    );
   }
   .lines {
     display: flex;
@@ -482,7 +542,7 @@ const StyledWrapper = styled.div`
     align-items: center;
     justify-content: center;
     opacity: 0.5;
-    font-family: 'Inter';
+    font-family: "Inter";
   }
   .text_4041 {
     transform: scaleY(24.5) scaleX(9);
@@ -492,9 +552,7 @@ const StyledWrapper = styled.div`
   }
   .text_4043 {
     transform: scaleY(24.5) scaleX(9);
-  }`;
-
-  
-
+  }
+`;
 
 export default Error;
