@@ -8,7 +8,7 @@ function Header() {
         to={"/"}
       >
         <img
-          src="/src/assets/Logo.png"
+          src="/Logo.png"
           alt="Logo do Site"
           className="w-full h-auto object-contain"
         />
