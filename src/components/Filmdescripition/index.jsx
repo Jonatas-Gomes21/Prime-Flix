@@ -82,7 +82,7 @@ function CardImage() {
   }
 
   return (
-    <div className="w-full min-h-screen flex justify-center items-center p-4">
+    <div className="w-full max-h-screen flex justify-center items-center p-4 border border-red-600">
       <Card className="w-full max-w-2xl pt-0">
         <img
           src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
