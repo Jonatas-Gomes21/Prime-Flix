@@ -10,14 +10,14 @@ import {
 
 function Cardfavorite({ movie, onRemove }) {
   return (
-    <Card className="w-full max-w-50 mx-auto">
+    <Card className="w-full max-w-xs mx-auto flex flex-col h-full">
       <CardHeader>
-        <CardTitle className="text-sm text-center line-clamp-2">
+        <CardTitle className="text-sm text-center line-clamp-2 min-h-10">
           {movie.title}
         </CardTitle>
       </CardHeader>
 
-      <CardContent>
+      <CardContent className="flex-1 flex items-center justify-center">
         <img
           src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
           alt={movie.title}
@@ -25,7 +25,7 @@ function Cardfavorite({ movie, onRemove }) {
         />
       </CardContent>
 
-      <CardFooter className="flex flex-col gap-2">
+      <CardFooter className="flex flex-col gap-2 mt-auto">
         <Link to={`/filme/${movie.id}`} className="w-full">
           <Button className="w-full bg-[#116FEB] hover:bg-[#085bc7] text-xs">
             Ver detalhes
